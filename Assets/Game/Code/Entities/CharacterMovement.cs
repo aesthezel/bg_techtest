@@ -6,6 +6,7 @@ namespace Game.Code.Entities
     public class CharacterMovement : MonoBehaviour
     {
         private const string HorizontalInputTag = "Horizontal";
+        private const string VerticalInputTag = "Vertical";
         
         [SerializeField] 
         private Rigidbody2D rb2D;
@@ -14,8 +15,9 @@ namespace Game.Code.Entities
         [SerializeField] 
         private Transform bodyToRotate;
 
-        public bool IsMoving => MovingHorizontalAxis != 0;
+        public bool IsMoving => MovingHorizontalAxis != 0 || MovingVerticalAxis != 0;
         private float MovingHorizontalAxis => Input.GetAxis(HorizontalInputTag);
+        private float MovingVerticalAxis => Input.GetAxis(VerticalInputTag);
         
         private void Start()
         {
@@ -24,7 +26,7 @@ namespace Game.Code.Entities
 
         private void FixedUpdate()
         {
-            var movement = new Vector2(MovingHorizontalAxis, Vector2.zero.y);
+            var movement = new Vector2(MovingHorizontalAxis, MovingVerticalAxis);
             rb2D.velocity = movement * (speed * Time.deltaTime);
         }
 

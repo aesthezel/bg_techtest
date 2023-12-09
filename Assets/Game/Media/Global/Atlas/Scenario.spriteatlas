@@ -44,26 +44,26 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: -8328923581568760697, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
+    - {fileID: -8328923581568760697, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: -4415365751288637170, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
-  - {fileID: -2752507447549868739, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
-  - {fileID: 3029889821359501104, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
-  - {fileID: 6071571083449440966, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
-  - {fileID: 1918586408751445652, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
-  - {fileID: 4658060401100195969, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
-  - {fileID: 3198945059263467498, guid: 052d6d6896977a947afb58f6c1b4eab2, type: 3}
+  - {fileID: -697959935009962125, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
+  - {fileID: 3034637366111536051, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
+  - {fileID: -2235346435959241551, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
+  - {fileID: 1736157016492264259, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
+  - {fileID: -8929919719110857027, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
+  - {fileID: -2191842532033199135, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
+  - {fileID: 3661588069105406963, guid: 2777c143da9bc0d4f9088cde7851b718, type: 3}
   m_PackedSpriteNamesToIndex:
   - Plant
   - BoderLeft
   - BoderRight
-  - StoreFurni
   - Wall
   - Flag
+  - StoreFurni2
   - Floor
   m_RenderDataMap: {}
   m_Tag: Scenario

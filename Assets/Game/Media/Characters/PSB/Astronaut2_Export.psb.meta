@@ -3267,17 +3267,17 @@ ScriptedImporter:
     - name: RightArm
       guid: a75c661bfdc2f924f8a5b03173a2ee9b
       position: {x: 248.44543, y: 350.12207, z: 0}
-      rotation: {x: 0, y: 0, z: 0.8590983, w: -0.51181066}
-      length: 375.54865
+      rotation: {x: 0, y: 0, z: 0.85909826, w: -0.5118108}
+      length: 375.54868
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: RightHand
       guid: d96a4a474aab15947b98b4ad54c8520a
-      position: {x: 375.5485, y: 0.000014489517, z: 0}
-      rotation: {x: 0, y: 0, z: -0.00094118644, w: 0.99999964}
-      length: 136.48642
+      position: {x: 375.5487, y: -0.00014987955, z: 0}
+      rotation: {x: 0, y: 0, z: -0.00094129855, w: 0.9999996}
+      length: 136.48648
       parentId: 0
       color:
         serializedVersion: 2
@@ -3646,8 +3646,8 @@ ScriptedImporter:
     spriteBone:
     - name: RightHand
       guid: d96a4a474aab15947b98b4ad54c8520a
-      position: {x: 375.54846, y: 0.00005578385, z: 0}
-      rotation: {x: 0, y: 0, z: -0.00094118644, w: 0.99999964}
+      position: {x: 375.5486, y: -0.00010207663, z: 0}
+      rotation: {x: 0, y: 0, z: -0.00094129855, w: 0.9999996}
       length: 136.48643
       parentId: 1
       color:
@@ -3656,8 +3656,8 @@ ScriptedImporter:
     - name: RightArm
       guid: a75c661bfdc2f924f8a5b03173a2ee9b
       position: {x: 284.44543, y: 498.12207, z: 0}
-      rotation: {x: 0, y: 0, z: 0.8590983, w: -0.51181066}
-      length: 375.54865
+      rotation: {x: 0, y: 0, z: 0.85909826, w: -0.5118108}
+      length: 375.54868
       parentId: -1
       color:
         serializedVersion: 2
@@ -4114,7 +4114,7 @@ ScriptedImporter:
       guid: 61e77c44089765c439327a6bfe107288
       position: {x: 128.46631, y: 550.73, z: 0}
       rotation: {x: 0, y: 0, z: 0.72811234, w: -0.68545794}
-      length: 256.89166
+      length: 256.89172
       parentId: -1
       color:
         serializedVersion: 2
@@ -4507,7 +4507,7 @@ ScriptedImporter:
       guid: 61e77c44089765c439327a6bfe107288
       position: {x: 120.46637, y: 286.72998, z: 0}
       rotation: {x: 0, y: 0, z: 0.72811234, w: -0.68545794}
-      length: 256.89166
+      length: 256.89172
       parentId: -1
       color:
         serializedVersion: 2
@@ -6161,7 +6161,7 @@ ScriptedImporter:
       guid: 2deaa08b6899da64cb361cc0c8c86973
       position: {x: 126.73462, y: 237.656, z: 0}
       rotation: {x: 0, y: 0, z: -0.6877384, w: 0.7259586}
-      length: 243.55418
+      length: 243.55421
       parentId: -1
       color:
         serializedVersion: 2
@@ -6508,7 +6508,7 @@ ScriptedImporter:
       guid: 2deaa08b6899da64cb361cc0c8c86973
       position: {x: 95.73462, y: 520.656, z: 0}
       rotation: {x: 0, y: 0, z: -0.6877384, w: 0.7259586}
-      length: 243.55418
+      length: 243.55421
       parentId: -1
       color:
         serializedVersion: 2
