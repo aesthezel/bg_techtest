@@ -1,5 +1,4 @@
 ﻿using System;
-using Game.Code.Shop.Attributes;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 

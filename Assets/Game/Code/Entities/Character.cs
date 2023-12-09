@@ -4,12 +4,14 @@ using System.Linq;
 using Game.Code.Entities;
 using Game.Code.Shop;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.U2D.Animation;
 
 public class Character : MonoBehaviour
 {
     #region Fields and Properties
+
+    private const string DefaultLabel = "Blue";
+    
     public Action<int> OnCreditsChanged;
     public Action<ClothingShop> OnInteractWithShop;
     public Action<List<ClothItem>> OnItemsUpdate;
@@ -80,7 +82,18 @@ public class Character : MonoBehaviour
         Credits += revenue;
 
         var itemsToRemove = CurrentItems.Intersect(items);
+        
+        foreach (var item in itemsToRemove) // Restore default values if an equipped part is sold.
+        {
+            var foundReference = Array.Find(partsReferences, part => part.Category == item.SelectedCategory);
+            var label = foundReference.SpriteResolver.GetLabel();
+
+            if (label == item.SelectedLabel) 
+                foundReference.SpriteResolver.SetCategoryAndLabel(item.SelectedCategory, DefaultLabel);
+        }
+        
         CurrentItems.RemoveAll(itemsToRemove.Contains);
+        
         OnItemsUpdate?.Invoke(CurrentItems);
     }
 

@@ -8,7 +8,7 @@ namespace Game.Code.Entities
         private CanvasGroup InteractionCanvasGroup;
         [field: SerializeField] 
         public GameObject InteractionObject { get; private set; }
-
+        
         public void ToggleInteraction(bool status)
         {
             InteractionCanvasGroup.alpha = status ? 1 : 0;

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
-namespace Game.Code.Shop.Attributes
+namespace Game.Code.Attributes
 {
     public class EnumerableDropdownAttribute : PropertyAttribute
     {

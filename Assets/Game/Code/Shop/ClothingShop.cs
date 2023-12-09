@@ -58,11 +58,7 @@ namespace Game.Code.Shop
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// Opens the specified character on the canvas.
-        /// </summary>
-        /// <param name="character">The character to be opened.</param>
+        
         public void Open(Character character)
         {
             this.character = character;
@@ -72,7 +68,7 @@ namespace Game.Code.Shop
             
             UpdateShoppingCartView();
         }
-
+        
         private void Close()
         {
             canvasGroup.alpha = 0;
@@ -80,11 +76,7 @@ namespace Game.Code.Shop
             canvasGroup.blocksRaycasts = false;
             OnShopClose?.Invoke();
         }
-
-        /// <summary>
-        /// Modifies the shopping cart by adding or removing a cloth item from the selected slots.
-        /// </summary>
-        /// <param name="slot">The slot to be modified.</param>
+        
         private void ModifyShoppingCart(IShopSlot<ClothItem> slot)
         {
             if (selectedSlots.Contains(slot))
@@ -98,10 +90,7 @@ namespace Game.Code.Shop
             
             UpdateShoppingCartView();
         }
-
-        /// <summary>
-        /// Updates the shopping cart view.
-        /// </summary>
+        
         private void UpdateShoppingCartView()
         {
             selectedItems.text = SelectedItemsDialog;

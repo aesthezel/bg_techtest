@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Game.Code.Shop.Attributes;
+using Game.Code.Attributes;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 

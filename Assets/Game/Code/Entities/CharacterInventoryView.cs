@@ -196,6 +196,7 @@ namespace Game.Code.Entities
                 {
                     foreach (var slot in configuredSlots)
                     {
+                        slot.ChangePrice(slot.Item.Cost);
                         slot.ForceReset();
                     }
 

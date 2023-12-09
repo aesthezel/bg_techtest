@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Game.Code.Shop.Attributes
+namespace Game.Code.Attributes.Editor
 {
     [CustomPropertyDrawer(typeof(EnumerableDropdownAttribute))]
     public class EnumerableDropdownDrawer : PropertyDrawer
