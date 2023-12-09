@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Code.Shop;
+using UnityEngine;
 
 namespace Game.Code.Entities
 {
@@ -6,5 +7,6 @@ namespace Game.Code.Entities
     public class CharacterSettings : ScriptableObject
     {
         public int StartingCredits;
+        public ClothItem[] StartingItems;
     }
 }

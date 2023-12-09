@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 namespace Game.Code.Shop
 {
+    // TODO: ClothingShop must be a Interface -or- Abstract
     public class ClothingShop : MonoBehaviour
     {
         private const string CanBuyColorTag = "green";

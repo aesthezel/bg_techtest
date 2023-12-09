@@ -1,18 +1,27 @@
 using System;
+using System.Collections.Generic;
 using Game.Code.Entities;
 using Game.Code.Shop;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class Character : MonoBehaviour
 {
     #region Fields and Properties
     public Action<int> OnCreditsChanged;
+    public Action<ClothingShop> OnInteractWithShop;
     
     [SerializeField] 
     private CharacterSettings settings;
 
     [SerializeField] 
     private GameObject[] CharacterViewsReferences;
+    
+    [SerializeField]
+    private SpriteLibrary spriteLibrary;
+    [SerializeField] 
+    private CharacterPartsReference[] partsReferences;
+    
 
     private int _credits;
     public int Credits
@@ -24,6 +33,9 @@ public class Character : MonoBehaviour
             OnCreditsChanged?.Invoke(_credits);
         }
     }
+
+    public List<ClothItem> CurrentItems { get; private set; } = new();
+
     #endregion
 
     #region Methods
@@ -43,14 +55,25 @@ public class Character : MonoBehaviour
         if (cost < 0) cost = 0;
         Credits -= cost;
     }
+
+    public void ChangeCloth(string category, string label)
+    {
+        var foundReference = Array.Find(partsReferences, part => part.Category == category);
+        foundReference.SpriteResolver.SetCategoryAndLabel(category, label);
+    }
     #endregion
     
     #region Unity Workflow
     private void Start()
     {
         Credits = settings.StartingCredits;
+        
+        if(settings.StartingItems.Length != 0)
+            CurrentItems.AddRange(settings.StartingItems);
+        
         ConfigureViews();
     }
+
     #endregion
 
 }
