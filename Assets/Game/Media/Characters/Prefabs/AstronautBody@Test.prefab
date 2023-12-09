@@ -1441,7 +1441,7 @@ GameObject:
   - component: {fileID: 7230636922470655812}
   - component: {fileID: 7230636922470655834}
   m_Layer: 0
-  m_Name: Astronaut_Test
+  m_Name: AstronautBody@Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
