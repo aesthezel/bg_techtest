@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemSpriteLibrary>k__BackingField: {fileID: 7108339969198208228, guid: ddae2f98935d2c84cb4dccbaaaf986ba, type: 3}
   SelectedCategory: RightToe
-  SelectedLabel: Blue
+  SelectedLabel: Orange
+  <Name>k__BackingField: Orange Orbs Boots
   <Cost>k__BackingField: 70
+  <CanBeSold>k__BackingField: 1

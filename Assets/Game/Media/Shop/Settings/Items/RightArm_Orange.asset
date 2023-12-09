@@ -15,4 +15,6 @@ MonoBehaviour:
   <ItemSpriteLibrary>k__BackingField: {fileID: 7108339969198208228, guid: ddae2f98935d2c84cb4dccbaaaf986ba, type: 3}
   SelectedCategory: RightArm
   SelectedLabel: Orange
+  <Name>k__BackingField: Orange Explorer Arm
   <Cost>k__BackingField: 30
+  <CanBeSold>k__BackingField: 1

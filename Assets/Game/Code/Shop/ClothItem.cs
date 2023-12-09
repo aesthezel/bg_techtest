@@ -24,10 +24,11 @@ namespace Game.Code.Shop
 
         [field: SerializeField] 
         public int Cost { get; private set; }
+        
+        [field: SerializeField]
+        public bool CanBeSold { get; private set; }
 
         public Sprite Sprite => ItemSpriteLibrary.GetSprite(SelectedCategory, SelectedLabel);
-        
-        public bool CanBeSold { get; private set; }
 
         public IEnumerable<string> ItemCategories => ItemSpriteLibrary == null ? ifNullMessage : ItemSpriteLibrary.GetCategoryNames();
         public IEnumerable<string> ItemLabels => ItemSpriteLibrary == null ? ifNullMessage : ItemSpriteLibrary.GetCategoryLabelNames(SelectedCategory);

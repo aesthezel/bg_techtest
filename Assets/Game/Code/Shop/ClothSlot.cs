@@ -20,6 +20,9 @@ namespace Game.Code.Shop
         private Color normalButtonColor;
         [SerializeField]
         private Color selectedButtonColor;
+
+        public int ReferenceCost { get; private set; }
+        private string TotalCost => Item.CanBeSold ? $"<color=yellow>{ReferenceCost}c</color>" : $"<color=white>Untradeable</color>";
         
         public ClothItem Item { get; private set; }
 
@@ -29,8 +32,11 @@ namespace Game.Code.Shop
         {
             Item = item;
             itemImage.sprite = item.Sprite;
+            selectionButton.image.color = normalButtonColor;
             itemName.text = string.IsNullOrEmpty(item.Name) ? item.name : item.Name; // If is null return the ScriptableObject base name
-            itemValue.text = item.Cost.ToString();
+
+            ReferenceCost = item.Cost;
+            itemValue.text = TotalCost;
             
             selectionButton.onClick.AddListener(() => PerformClick(onClick));
         }
@@ -52,6 +58,12 @@ namespace Game.Code.Shop
             selected = false;
             selectionButton.image.color = normalButtonColor;
             gameObject.SetActive(true);
+        }
+
+        public void ChangePrice(int credits)
+        {
+            ReferenceCost = credits;
+            itemValue.text = TotalCost;
         }
     }
 }

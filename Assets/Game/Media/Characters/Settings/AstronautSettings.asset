@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91423d211c114b2a9dc3dd1307fc6197, type: 3}
   m_Name: AstronautSettings
   m_EditorClassIdentifier: 
-  StartingCredits: 100
+  StartingCredits: 500
   StartingItems:
   - {fileID: 11400000, guid: a7b5da495a54f68478bfe1c68289039b, type: 2}
   - {fileID: 11400000, guid: 3c83bbd1ca933a74e944740abc79f3cd, type: 2}

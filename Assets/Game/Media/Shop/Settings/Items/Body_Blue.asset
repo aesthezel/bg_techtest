@@ -15,4 +15,6 @@ MonoBehaviour:
   <ItemSpriteLibrary>k__BackingField: {fileID: 7108339969198208228, guid: ddae2f98935d2c84cb4dccbaaaf986ba, type: 3}
   SelectedCategory: Body
   SelectedLabel: Blue
+  <Name>k__BackingField: Default Blue Body
   <Cost>k__BackingField: 50
+  <CanBeSold>k__BackingField: 0

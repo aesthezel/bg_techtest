@@ -23,6 +23,9 @@ namespace Game.Code.Shop
         [SerializeField]
         private Character character;
 
+        [field: SerializeField, Range(0, 100)]
+        public int PercentTradeFee { get; private set; }
+
         private bool buyerEnoughMoney;
         
         [Header("Item Settings")]
@@ -44,10 +47,14 @@ namespace Game.Code.Shop
         private Button clearButton;
 
         private string SelectedItemsDialog => $"You have selected {selectedSlots.Count} items";
-        private int GetTotalCreditsAmount => selectedSlots.Count == 0 ? 0 : selectedSlots.Sum(slot => slot.Item.Cost);
+        private int GetTotalCreditsAmount => selectedSlots.Count == 0 ? 0 : selectedSlots.Sum(slot => slot.ReferenceCost);
+        
+        public bool IsOpen => canvasGroup.alpha >= 1;
 
         private readonly List<IShopSlot<ClothItem>> configuredSlots = new();
         private readonly List<IShopSlot<ClothItem>> selectedSlots = new();
+
+        public Action OnShopClose;
         #endregion
 
         #region Methods
@@ -56,7 +63,7 @@ namespace Game.Code.Shop
         /// Opens the specified character on the canvas.
         /// </summary>
         /// <param name="character">The character to be opened.</param>
-        private void Open(Character character)
+        public void Open(Character character)
         {
             this.character = character;
             canvasGroup.alpha = 1;
@@ -71,6 +78,7 @@ namespace Game.Code.Shop
             canvasGroup.alpha = 0;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
+            OnShopClose?.Invoke();
         }
 
         /// <summary>
@@ -117,9 +125,6 @@ namespace Game.Code.Shop
                 soldItems.Add(selectedSlot.Item);
             }
             
-            var elementsToSold = configuredSlots.Intersect(selectedSlots); // Intersect selected items to be erased from Shop Database
-            configuredSlots.RemoveAll(elementsToSold.Contains);
-            
             character.ObtainItems(GetTotalCreditsAmount, soldItems.ToArray());
             
             selectedSlots.Clear();
@@ -137,6 +142,34 @@ namespace Game.Code.Shop
             
             selectedSlots.Clear();
             UpdateShoppingCartView();
+        }
+
+        public void GetItems(List<ClothItem> items)
+        {
+            var itemsToAdd = 0;
+            
+            for (var i = 0; i < items.Count; i++)
+            {
+                if (i < configuredSlots.Count)
+                {
+                    configuredSlots[i].Configure(items[i], ModifyShoppingCart);
+                    configuredSlots[i].ForceReset();
+                    continue;
+                }
+
+                itemsToAdd++;
+            }
+
+            if (itemsToAdd <= 0) return;
+
+            for (var i = items.Count - itemsToAdd; i < items.Count; i++)
+            {
+                var slotInstance = Instantiate(itemSlot, itemContainer).GetComponent<IShopSlot<ClothItem>>();
+                
+                if (slotInstance == null) return;
+                slotInstance.Configure(items[i], ModifyShoppingCart);
+                configuredSlots.Add(slotInstance);
+            }
         }
         #endregion
         

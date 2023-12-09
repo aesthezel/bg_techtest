@@ -15,4 +15,6 @@ MonoBehaviour:
   <ItemSpriteLibrary>k__BackingField: {fileID: 7108339969198208228, guid: ddae2f98935d2c84cb4dccbaaaf986ba, type: 3}
   SelectedCategory: Head
   SelectedLabel: Blue
+  <Name>k__BackingField: Default Blue Helment
   <Cost>k__BackingField: 30
+  <CanBeSold>k__BackingField: 0
